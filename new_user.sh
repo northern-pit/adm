@@ -9,7 +9,7 @@ fi
 # Variables
 USERNAME="shershua"
 PASSWORD="temporary_password"
-SSH_KEY_FILE="ssh_public_key.txt"
+SSH_KEY_FILE="shershua_bl.pub"
 
 # Check if the SSH key file exists
 if [ ! -f "$SSH_KEY_FILE" ]; then
