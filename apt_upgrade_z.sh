@@ -38,7 +38,7 @@ logfile=$(date "+%Y%m%d_%H%M%S")_$(uname -n)_apt_upgrade.log
         echo "WARNING: Autoremove failed." >&2
     fi
     # Clear the local repository of retrieved package files (.deb)
-    if sudo apt autoclean; then
+    if apt autoclean; then
         echo "SUCCESS: Autoclean complete."
     else
         echo "WARNING: Autoclean failed." >&2
@@ -56,7 +56,7 @@ logfile=$(date "+%Y%m%d_%H%M%S")_$(uname -n)_apt_upgrade.log
         echo "One or more Zabbix services were detected as running. Restarting them now to apply potential updates..."
 
         # Restart all services matching the pattern 'zabbix-*.service'
-        if sudo systemctl restart 'zabbix-*.service'; then
+        if systemctl restart 'zabbix-*.service'; then
             echo "SUCCESS: Zabbix services (zabbix-*.service) successfully restarted."
         else
             echo "WARNING: Failed to restart one or more Zabbix services." >&2
